@@ -1,0 +1,18 @@
+name: WordPress Deploy
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy using Robocopy
+        run: |
+          robocopy $env:GITHUB_WORKSPACE C:\inetpub\wwwroot\wordpress /E /XD .git .github /NFL /NDL
+          if ($LASTEXITCODE -le 7) { exit 0 }
