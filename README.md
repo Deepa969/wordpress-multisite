@@ -1,2 +1,3 @@
 # wordpress-multisite
-wordpress_multisite
+wordpress-multisite
+wp site
