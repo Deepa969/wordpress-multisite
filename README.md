@@ -1,2 +1,2 @@
 # wordpress-multisite
-wordpress multisite workflow
+wordpress_multisite
